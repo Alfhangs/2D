@@ -8,7 +8,7 @@ public class Collectable : Collidable
 
     protected override void OnCollide(Collider2D collider)
     {
-        if (collider.name == "Player)")
+        if (collider.name == "Player")
             OnCollect();
     }
     protected virtual void OnCollect()
