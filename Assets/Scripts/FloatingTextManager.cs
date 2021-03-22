@@ -41,6 +41,8 @@ public class FloatingTextManager : MonoBehaviour
             txt._gameObject = Instantiate(textPrefab);
             txt._gameObject.transform.SetParent(textContainer.transform);
             txt._text = txt._gameObject.GetComponent<Text>();
+
+            floatingTexts.Add(txt);
         }
         return txt;
     }
