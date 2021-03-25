@@ -112,10 +112,10 @@ TextureImporter:
     second: enemy_0
   - first:
       213: 3235062197104327778
-    second: Atlas_36
+    second: player_00
   - first:
       213: 6913638643635410091
-    second: Atlas_37
+    second: enemy_00
   - first:
       213: 5035139237759867391
     second: Atlas_38
@@ -1748,7 +1748,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1756,6 +1756,48 @@ TextureImporter:
       bones: []
       spriteID: 2795ecda18feb3220800000000000000
       internalID: 2466828561161279858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_00
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26cb2bc9def35ec20800000000000000
+      internalID: 3235062197104327778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_00
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba45d4367bd22ff50800000000000000
+      internalID: 6913638643635410091
       vertices: []
       indices: 
       edges: []
