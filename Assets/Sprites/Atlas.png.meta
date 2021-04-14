@@ -118,7 +118,7 @@ TextureImporter:
     second: enemy_00
   - first:
       213: 5035139237759867391
-    second: Atlas_38
+    second: menu_0
   - first:
       213: 7214893647509974784
     second: Atlas_39
@@ -1798,6 +1798,27 @@ TextureImporter:
       bones: []
       spriteID: ba45d4367bd22ff50800000000000000
       internalID: 6913638643635410091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_0
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9de4d957860e540800000000000000
+      internalID: 5035139237759867391
       vertices: []
       indices: 
       edges: []

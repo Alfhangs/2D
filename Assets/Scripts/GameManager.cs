@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     //References
     public Player player;
-    //public weapon weapon..
+    public Weapon weapon;
     public FloatingTextManager _floatingTextManager;
 
     //Logic
@@ -41,6 +41,20 @@ public class GameManager : MonoBehaviour
         _floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
 
+    // Upgrade Weapon
+    public bool TryUpgradeWeapon()
+    {
+        //is the weapon max level
+        if (weaponPrices.Count <= weapon.weaponLevel)
+            return false;
+        if(pesetas>= weaponPrices[weapon.weaponLevel])
+        {
+            pesetas -= weaponPrices[weapon.weaponLevel];
+            weapon.UpgradeWeapon();
+            return true;
+        }
+        return false;
+    }
 
     //Save state
     /*
@@ -56,7 +70,7 @@ public class GameManager : MonoBehaviour
         s += "0" + " |";
         s += pesetas.ToString() + "|";
         s += experience.ToString() + "|";
-        s += "0";
+        s += weapon.weaponLevel.ToString();
 
         PlayerPrefs.SetString("SaveState", s);
     }
@@ -71,6 +85,8 @@ public class GameManager : MonoBehaviour
         pesetas = int.Parse(data[1]);
         experience = int.Parse(data[2]);
         //Change the weapon level
+        weapon.SetWeaponLevel(int.Parse(data[3]));
+
 
         Debug.Log("Load State");
     }
