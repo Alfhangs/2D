@@ -40,6 +40,7 @@ public class CharacterMenu : MonoBehaviour
     private void OnSelectionChanged()
     {
         characterSelectionSprite.sprite = GameManager.instance.playerSprites[currentCharacterSelection];
+        GameManager.instance.player.SwapSprite(currentCharacterSelection);
     }
 
     //Weapon upgrade
@@ -58,15 +59,32 @@ public class CharacterMenu : MonoBehaviour
             upgradeCostText.text = "MAX";
         else
             upgradeCostText.text = GameManager.instance.weaponPrices[GameManager.instance.weapon.weaponLevel].ToString();
-        upgradeCostText.text = "NOT IMPLENTED";
+
 
         //Meta
         hitpointText.text = GameManager.instance.player.hitpoint.ToString();
         pesetasText.text = GameManager.instance.pesetas.ToString();
-        levelText.text = "NOT IMPLENTED";
+        levelText.text = GameManager.instance.GetCurrentLevel().ToString();
 
         //xp Bar
-        xpText.text = "NOT IMPLENTED";
-        xpBar.localScale = new Vector3(0.5f, 0, 0);
+        int currentLevel = GameManager.instance.GetCurrentLevel();
+        if (currentLevel == GameManager.instance.xpTable.Count)
+        {
+            xpText.text = GameManager.instance.experience.ToString() + " total experience points"; // Display total xp
+            xpBar.localScale = Vector3.one;
+        }
+        else
+        {
+            int prevLevelXp = GameManager.instance.GetXpToLevel(currentLevel - 1);
+            int currentLevelXp = GameManager.instance.GetXpToLevel(currentLevel);
+
+            int diff = currentLevelXp - prevLevelXp;
+            int currentXpInToLevel = GameManager.instance.experience - prevLevelXp;
+
+            float completionRatio = (float)currentXpInToLevel / (float)diff;
+            xpBar.localScale = new Vector3(completionRatio, 1, 1);
+            xpText.text = currentXpInToLevel.ToString() + " / " + diff;
+        }
+
     }
 }

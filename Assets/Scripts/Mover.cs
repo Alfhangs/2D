@@ -4,14 +4,16 @@ using UnityEngine;
 
 public abstract class Mover : Fighter
 {
+    private Vector3 originalSize;
     protected BoxCollider2D boxCollider;
     Vector3 moveDelta;
     RaycastHit2D hit;
-    protected float ySpeed = 0.75f;
-    protected float xSpeed = 1.0f;
+    public float ySpeed = 0.75f;
+    public float xSpeed = 1.0f;
 
     protected virtual void Start()
     {
+        originalSize = transform.localScale;
         boxCollider = GetComponent<BoxCollider2D>();
     }
    
@@ -20,9 +22,9 @@ public abstract class Mover : Fighter
         moveDelta = new Vector3(input.x *xSpeed, input.y * ySpeed, 0);
 
         if (moveDelta.x > 0)
-            transform.localScale = Vector3.one;
+            transform.localScale = originalSize;
         else if (moveDelta.x < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(originalSize.x -1, originalSize.y, originalSize.z);
 
         //Add push vector, if any
         moveDelta += pushDirection;

@@ -17,6 +17,8 @@ public class Weapon : Collidable
     private float cooldown = 0.5f;
     private float lastSwing;
 
+ 
+
     protected override void Start()
     {
         base.Start();
