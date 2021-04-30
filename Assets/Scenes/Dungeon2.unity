@@ -2561,7 +2561,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   sceneNames:
-  - Dungeon1
+  - BossScene
 --- !u!61 &739716427
 BoxCollider2D:
   m_ObjectHideFlags: 0
